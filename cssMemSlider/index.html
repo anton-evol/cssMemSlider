@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>cssMemSlider</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <div class="slider">
-        <div id="slide1" class="slide"></div>
-        <div id="slide2" class="slide"></div>
-        <div id="slide3" class="slide"></div>
-        <div id="slide4" class="slide"></div>
-      </div>
+        <div class="controls-and-text">
+            <!-- <label for="slide1-button" class="slide-control"> -->
+            <input type="radio" name="slide-control" id="slide1-button" checked value="slide1" />
+            <!-- </label> -->
+            <!-- <label for="slide2-button" class="slide-control"> -->
+            <input type="radio" name="slide-control" id="slide2-button" value="slide2" />
+            <!-- </label> -->
+            <!-- <label for="slide3-button" class="slide-control"> -->
+            <input type="radio" name="slide-control" id="slide3-button" value="slide3" />
+            <!-- </label> -->
+            <label for="slide4-button" class="slide-control">
+                <input type="radio" name="slide-control" id="slide4-button" value="slide4" />
+            </label>
+            <div class="text">
+                <span id="slide1-text" class="slide-text">Текст слайда 1</span>
+                <span id="slide2-text" class="slide-text">Текст слайда 2</span>
+                <span id="slide3-text" class="slide-text">Текст слайда 3</span>
+                <span id="slide4-text" class="slide-text">Текст слайда 4</span>
+            </div>
+            <div class="slider">
+                <div id="slide1" class="slide"></div>
+                <div id="slide2" class="slide"></div>
+                <div id="slide3" class="slide"></div>
+                <div id="slide4" class="slide"></div>
+            </div>
+        </div>
     </div>
-    <div class="container">
-      <div class="text">
-        <span id="slide1-text" class="slide-text">Текст слайда 1</span>
-        <span id="slide2-text" class="slide-text">Текст слайда 2</span>
-        <span id="slide3-text" class="slide-text">Текст слайда 3</span>
-        <span id="slide4-text" class="slide-text">Текст слайда 4</span>
-      </div>
-      <div class="controls">
-        <input type="radio" name="slide1" id="slide1-button" />
-        <input type="radio" name="slide2" id="slide2-button" />
-        <input type="radio" name="slide3" id="slide3-button" />
-        <input type="radio" name="slide4" id="slide4-button" />
-      </div>
-    </div>
-  </body>
+    <div class="container" id="test">
+        <br><br><br><br><br><br>
+        visibility: hidden; display: none - это ок.. (скрыть радио батоны)<br>
+        флоат - нельзя (лучше обратите внимание на грид и манипулирование блоками grid-template-area)<br>
+        отрицательные марджины - в задании не запрещены, но так себе подход (если для манипулирования мемасами -
+        обратите внимание на transform: translate)<br>
+        position static, relative, fixed, absolute, sticky; - не должны быть позиционированы както иначе от статика (в
+        задании указано, что не используется топ, лефт, райт, боттом)
+</body>
+
 </html>
