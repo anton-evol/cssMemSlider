@@ -1,72 +1,105 @@
 body {
-  background-color: #25282a;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
+    background-color: #25282a;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+    text-align: -webkit-center;
 }
+
+input {
+    /* display: none; */
+}
+
 .slider {
-  height: 400px;
-  margin: 3vw 0;
-  overflow-y: hidden;
+    /* todo change to vw/vh */
+    height: 400px;
+    margin: 3vw 0;
+    overflow-y: hidden;
+    width: 100%;
 }
+
 .slide {
-  background-image: url('../cssMemSlider/images/temp.jpeg');
-  width: 300px;
-  height: 400px;
-  background-size: cover;
+    background-image: url('../cssMemSlider/images/temp.jpeg');
+    /* todo change to vw/vh */
+    width: 300px;
+    height: 400px;
+    background-size: cover;
 }
-.text {
+
+.text-and-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.text {}
+
 .slide-text {
     display: none;
 }
+
 .controls {
-}
-.controls-and-text{}
-.slide-control {
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: 0.5s;
-}
-.slide-control:hover > input {
-  border: 0.15rem solid white;
-  background-color: white;
-  box-shadow: inset 1rem 1rem white;
-}
-.slide-control:hover > input:checked {
-  border: 0.15rem solid white;
-  box-shadow: inset 1rem 1rem #25282a;
-}
-input {
-  appearance: none;
-  cursor: pointer;
-  font: inherit;
-  color: #86b5fa;
-  width: 1rem;
-  height: 1rem;
-  border: 0.15rem solid #86b5fa;
-  background-color: #86b5fa;
-  border-radius: 50%;
-  box-shadow: inset 1rem 1rem #86b5fa;
-  transition: 0.5s;
-}
-input:checked {
-  box-shadow: inset 1rem 1rem #25282a;
-  transition: 0.5s;
+    display: flex;
 }
 
-#slide1-button:checked ~ .test>#slide1-text{display: inline}
-#slide2-button:checked ~ #slide2-text{display: inline}
-#slide3-button:checked ~ #slide3-text{display: inline}
-#slide4-button:checked ~ #slide4-text{display: inline}
-#slide4-button:checked ~ label[for="slide4-button"]:active
-label[for="slide4-button"]:active ~ #slide4-text{display: inline}
+label {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-control {
+    appearance: none;
+    cursor: pointer;
+    font: inherit;
+    color: #86b5fa;
+    width: 1rem;
+    height: 1rem;
+    border: 0.15rem solid #86b5fa;
+    background-color: #86b5fa;
+    border-radius: 50%;
+    box-shadow: inset 1rem 1rem #86b5fa;
+    transition: 0.5s;
+}
+
+label:hover>.slide-control {
+    border: 0.15rem solid white;
+    background-color: white;
+    box-shadow: inset 1rem 1rem white;
+}
+
+input[id='slide1-button']:checked~.text-and-controls>.controls>label[for="slide1-button"]>.slide-control,
+input[id='slide2-button']:checked~.text-and-controls>.controls>label[for="slide2-button"]>.slide-control,
+input[id='slide3-button']:checked~.text-and-controls>.controls>label[for="slide3-button"]>.slide-control,
+input[id='slide4-button']:checked~.text-and-controls>.controls>label[for="slide4-button"]>.slide-control {
+    box-shadow: inset 1rem 1rem #25282a;
+}
+
+input[id='slide1-button']:checked~.text-and-controls>.text>span[id="slide1-text"],
+input[id='slide2-button']:checked~.text-and-controls>.text>span[id="slide2-text"],
+input[id='slide3-button']:checked~.text-and-controls>.text>span[id="slide3-text"],
+input[id='slide4-button']:checked~.text-and-controls>.text>span[id="slide4-text"] {
+    display: inline;
+}
