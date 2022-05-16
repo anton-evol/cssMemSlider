@@ -15,31 +15,78 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+
     justify-content: center;
     width: 80vw;
-    text-align: -webkit-center;
+
+    overflow: hidden;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 2rem;
 }
 
 input {
-    /* display: none; */
+    display: none;
 }
 
 .slider {
-    /* todo change to vw/vh */
-    height: 400px;
     margin: 3vw 0;
-    overflow-y: hidden;
-    width: 100%;
+    height: 40vw;
+    width: 400%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+
+
 }
 
 .slide {
-    background-image: url('../cssMemSlider/images/temp.jpeg');
-    /* todo change to vw/vh */
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateX(200vw);
+    /* transition: ease .7s; */
+}
+
+.slide:nth-of-type(1) {
+    background-image: url('../cssMemSlider/images/1.jpeg');
+}
+
+.slide:nth-of-type(2) {
+    background-image: url('../cssMemSlider/images/2.jpeg');
+}
+
+.slide:nth-of-type(3) {
+    background-image: url('../cssMemSlider/images/3.jpeg');
+}
+
+.slide:nth-of-type(4) {
+    background-image: url('../cssMemSlider/images/4.jpeg');
+}
+
+input[id='slide1-button']:checked~.slider>.slide[id="slide1"] {
+    transform: translateX(120vw);
+    transition: ease .7s;
+}
+
+input[id='slide2-button']:checked~.slider>.slide[id="slide2"] {
+    transform: translateX(40vw);
+    transition: ease .7s;
+}
+
+input[id='slide3-button']:checked~.slider>.slide[id="slide3"] {
+    transform: translateX(-40vw);
+    transition: ease .7s;
+}
+
+input[id='slide4-button']:checked~.slider>.slide[id="slide4"] {
+    transform: translateX(-120vw);
+    transition: ease .7s;
 }
 
 .text-and-controls {
@@ -50,10 +97,35 @@ input {
     width: 100%;
 }
 
-.text {}
+.text {
+    width: 400%;
+    height: 5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .slide-text {
-    display: none;
+    transform: translateX(100vw);
+    transition: ease .7s;
+    min-width: 60vw;
+}
+
+input[id='slide1-button']:checked~.text-and-controls>.text>div[id="slide1-text"] {
+    transform: translateX(0vw);
+}
+
+input[id='slide2-button']:checked~.text-and-controls>.text>div[id="slide2-text"] {
+    transform: translateX(-60vw);
+}
+
+input[id='slide3-button']:checked~.text-and-controls>.text>div[id="slide3-text"] {
+    transform: translateX(-120vw);
+}
+
+input[id='slide4-button']:checked~.text-and-controls>.text>div[id="slide4-text"] {
+    transform: translateX(-180vw);
 }
 
 .controls {
@@ -62,8 +134,10 @@ input {
 
 label {
     cursor: pointer;
-    width: 3rem;
-    height: 3rem;
+    width: 5vw;
+    height: 5vw;
+    max-width: 3rem;
+    max-height: 3rem;
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
@@ -95,11 +169,4 @@ input[id='slide2-button']:checked~.text-and-controls>.controls>label[for="slide2
 input[id='slide3-button']:checked~.text-and-controls>.controls>label[for="slide3-button"]>.slide-control,
 input[id='slide4-button']:checked~.text-and-controls>.controls>label[for="slide4-button"]>.slide-control {
     box-shadow: inset 1rem 1rem #25282a;
-}
-
-input[id='slide1-button']:checked~.text-and-controls>.text>span[id="slide1-text"],
-input[id='slide2-button']:checked~.text-and-controls>.text>span[id="slide2-text"],
-input[id='slide3-button']:checked~.text-and-controls>.text>span[id="slide3-text"],
-input[id='slide4-button']:checked~.text-and-controls>.text>span[id="slide4-text"] {
-    display: inline;
 }
