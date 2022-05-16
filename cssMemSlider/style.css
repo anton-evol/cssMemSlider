@@ -39,8 +39,6 @@ input {
     overflow: hidden;
     display: flex;
     flex-direction: row;
-
-
 }
 
 .slide {
@@ -50,7 +48,6 @@ input {
     background-position: center;
     background-repeat: no-repeat;
     transform: translateX(200vw);
-    /* transition: ease .7s; */
 }
 
 .slide:nth-of-type(1) {
@@ -69,24 +66,24 @@ input {
     background-image: url('../cssMemSlider/images/4.jpeg');
 }
 
-input[id='slide1-button']:checked~.slider>.slide[id="slide1"] {
+input[id='slide1-button']:checked~.slider>.slide[id='slide1'] {
     transform: translateX(120vw);
-    transition: ease .7s;
+    transition: ease 0.7s;
 }
 
-input[id='slide2-button']:checked~.slider>.slide[id="slide2"] {
+input[id='slide2-button']:checked~.slider>.slide[id='slide2'] {
     transform: translateX(40vw);
-    transition: ease .7s;
+    transition: ease 0.7s;
 }
 
-input[id='slide3-button']:checked~.slider>.slide[id="slide3"] {
+input[id='slide3-button']:checked~.slider>.slide[id='slide3'] {
     transform: translateX(-40vw);
-    transition: ease .7s;
+    transition: ease 0.7s;
 }
 
-input[id='slide4-button']:checked~.slider>.slide[id="slide4"] {
+input[id='slide4-button']:checked~.slider>.slide[id='slide4'] {
     transform: translateX(-120vw);
-    transition: ease .7s;
+    transition: ease 0.7s;
 }
 
 .text-and-controls {
@@ -107,24 +104,24 @@ input[id='slide4-button']:checked~.slider>.slide[id="slide4"] {
 }
 
 .slide-text {
-    transform: translateX(100vw);
-    transition: ease .7s;
+    transform: translateX(245vw);
+    transition: ease 0.7s;
     min-width: 60vw;
 }
 
-input[id='slide1-button']:checked~.text-and-controls>.text>div[id="slide1-text"] {
+input[id='slide1-button']:checked~.text-and-controls>.text>div[id='slide1-text'] {
     transform: translateX(0vw);
 }
 
-input[id='slide2-button']:checked~.text-and-controls>.text>div[id="slide2-text"] {
+input[id='slide2-button']:checked~.text-and-controls>.text>div[id='slide2-text'] {
     transform: translateX(-60vw);
 }
 
-input[id='slide3-button']:checked~.text-and-controls>.text>div[id="slide3-text"] {
+input[id='slide3-button']:checked~.text-and-controls>.text>div[id='slide3-text'] {
     transform: translateX(-120vw);
 }
 
-input[id='slide4-button']:checked~.text-and-controls>.text>div[id="slide4-text"] {
+input[id='slide4-button']:checked~.text-and-controls>.text>div[id='slide4-text'] {
     transform: translateX(-180vw);
 }
 
@@ -164,9 +161,43 @@ label:hover>.slide-control {
     box-shadow: inset 1rem 1rem white;
 }
 
-input[id='slide1-button']:checked~.text-and-controls>.controls>label[for="slide1-button"]>.slide-control,
-input[id='slide2-button']:checked~.text-and-controls>.controls>label[for="slide2-button"]>.slide-control,
-input[id='slide3-button']:checked~.text-and-controls>.controls>label[for="slide3-button"]>.slide-control,
-input[id='slide4-button']:checked~.text-and-controls>.controls>label[for="slide4-button"]>.slide-control {
+input[id='slide1-button']:checked~.text-and-controls>.controls>label[for='slide1-button']>.slide-control,
+input[id='slide2-button']:checked~.text-and-controls>.controls>label[for='slide2-button']>.slide-control,
+input[id='slide3-button']:checked~.text-and-controls>.controls>label[for='slide3-button']>.slide-control,
+input[id='slide4-button']:checked~.text-and-controls>.controls>label[for='slide4-button']>.slide-control {
     box-shadow: inset 1rem 1rem #25282a;
+}
+
+@media (max-width: 767px) {
+    .text-and-controls {
+        flex-direction: column;
+    }
+
+    .controls {
+        order: 1;
+    }
+
+    .text {
+        order: 2;
+    }
+
+    .slide-text {
+        transform: translateX(200vw);
+    }
+
+    input[id='slide1-button']:checked~.text-and-controls>.text>div[id='slide1-text'] {
+        transform: translateX(120vw);
+    }
+
+    input[id='slide2-button']:checked~.text-and-controls>.text>div[id='slide2-text'] {
+        transform: translateX(60vw);
+    }
+
+    input[id='slide3-button']:checked~.text-and-controls>.text>div[id='slide3-text'] {
+        transform: translateX(0vw);
+    }
+
+    input[id='slide4-button']:checked~.text-and-controls>.text>div[id='slide4-text'] {
+        transform: translateX(-60vw);
+    }
 }
