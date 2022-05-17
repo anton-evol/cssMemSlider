@@ -161,6 +161,12 @@ label:hover>.slide-control {
     box-shadow: inset 1rem 1rem white;
 }
 
+label:active>.slide-control {
+    border: 0.15rem solid #25282a;
+    background-color: #86b5fa;
+    box-shadow: inset 1rem 1rem #86b5fa;
+}
+
 input[id='slide1-button']:checked~.text-and-controls>.controls>label[for='slide1-button']>.slide-control,
 input[id='slide2-button']:checked~.text-and-controls>.controls>label[for='slide2-button']>.slide-control,
 input[id='slide3-button']:checked~.text-and-controls>.controls>label[for='slide3-button']>.slide-control,
